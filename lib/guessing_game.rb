@@ -42,10 +42,10 @@ class Game
     set_comp_pick(SecureRandom.random_number(100))
     puts "#{@comp_pick}"
     player.make_guess
-    puts "#{player.incorrect_guess_ary}"
+    # puts "#{player.incorrect_guess_ary}"
 
 
-    until player.incorrect_guess_ary.length ==  5
+    until player.incorrect_guess_ary.length  > 4
       if player.guess == @comp_pick
         puts "You got it!"
         exit
@@ -66,3 +66,4 @@ class Game
     end
   end
 end
+Game.new.run_game
